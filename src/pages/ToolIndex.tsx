@@ -35,7 +35,7 @@ async function getData(): Promise<Payment[]> {
     ]
 }
 
-function App() {
+function ToolIndex() {
     const [data, setData] = useState<Payment[]>([])
 
     useEffect(() => {
@@ -52,4 +52,4 @@ function App() {
     )
 }
 
-export default App
+export default ToolIndex
