@@ -9,7 +9,9 @@ function App() {
       <Box pt={13} px={13}>
         <Navbar />
       </Box>
-      <Outlet /> {/* Render nested routes here */}
+      <Box mx={28} pt={8}>
+        <Outlet /> {/* Render nested routes here */}
+      </Box>
     </>
   );
 }
