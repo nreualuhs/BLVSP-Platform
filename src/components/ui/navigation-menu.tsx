@@ -1,16 +1,16 @@
-import { Box, BoxProps, Flex, FlexProps, Link as ChakraLink, LinkProps } from "@chakra-ui/react"
+import { Box, BoxProps, Link as ChakraLink, LinkProps, HStack, StackProps } from "@chakra-ui/react"
 import { Link as ReactLink } from "react-router-dom";
 
-export const NavigationMenu = (props: FlexProps) => {
+export const NavigationMenu = (props: StackProps) => {
   const {
     children,
     ...rest
   } = props;
 
-  return <Flex as="nav" align="center" w="100%"
+  return <HStack as="nav" w="100%"
     {...rest}>
     {children}
-  </Flex>
+  </HStack>
 }
 
 export const NavigationMenuItem = (props: BoxProps) => {

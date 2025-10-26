@@ -1,12 +1,14 @@
-// App.tsx
 import { Outlet } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import "./App.css";
+import { Box } from "@chakra-ui/react";
 
 function App() {
   return (
     <>
-      <Navbar />
+      <Box pt={13} px={13}>
+        <Navbar />
+      </Box>
       <Outlet /> {/* Render nested routes here */}
     </>
   );

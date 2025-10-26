@@ -9,18 +9,26 @@ import {
 } from "@/components/ui/navigation-menu"
 
 import { ColorModeButton } from "./ui/color-mode";
+import { HStack, Image } from "@chakra-ui/react";
 
 function Navbar() {
   return (
-    <NavigationMenu>
+    <NavigationMenu bg="purple.500" px={6} py={4} gap={8} align="center" justify="space-between">
       <NavigationMenuItem>
-        <NavigationMenuLink href="/">Home</NavigationMenuLink>
+        <Image w="60px" h="50px" src="logo.png"></Image>
+      </NavigationMenuItem>
+      <NavigationMenuItem flexGrow={1}>
+        <HStack gap={8}>
+          <NavigationMenuLink href="/" color="white">Home</NavigationMenuLink>
+          <NavigationMenuLink href="#" color="white">Tool Index</NavigationMenuLink>
+          <NavigationMenuLink href="createpage" color="white">Create Post</NavigationMenuLink>
+          <NavigationMenuLink href="#" color="white">Mentorship</NavigationMenuLink>
+          <NavigationMenuLink href="#" color="white">Volunteer</NavigationMenuLink>
+          <NavigationMenuLink href="#" color="white">Tool Submission Form</NavigationMenuLink>
+        </HStack>
       </NavigationMenuItem>
       <NavigationMenuItem>
-        <NavigationMenuLink href="createpage">Create Post</NavigationMenuLink>
-      </NavigationMenuItem>
-      <NavigationMenuItem>
-        <ColorModeButton></ColorModeButton>
+        <ColorModeButton color="white"></ColorModeButton>
       </NavigationMenuItem>
     </NavigationMenu>
 
