@@ -1,55 +1,50 @@
-// import { useState, useEffect } from 'react'
-// import Navbar from './components/Navbar'
-// import './App.css'
-// import { DataTable } from './components/datatable/data-table'
-// import { Payment, columns } from './components/datatable/columns'
+import toolsData from '../data/sample_tools.json';
+import { RatingGroup, Table } from "@chakra-ui/react";
 
-import { useState, useEffect } from "react"
-import { DataTable } from "@/components/datatable/data-table"
-import { Payment, columns } from '../components/datatable/columns'
+interface Tool {
+  id: string;
+  name: string;
+  compatibility: string;
+  description: string;
+  rating: number;
+};
 
-// Fetch the data as in your DemoPage component
-async function getData(): Promise<Payment[]> {
-    return [
-        {
-            id: "123",
-            name: "Can You See Me",
-            compatibility: "JAWS",
-            description: "A simple tool that offers guidence on webcam placement to people with limited amounts of useful vision",
-            rating: "4/5"
-        },
-        {
-            id: "456",
-            name: "AI Content Describer",
-            compatibility: "NVDA",
-            description: "Provides descriptions for images and UI controls using multiple AI models like Claude, ChatGPT, and Gemini",
-            rating: "4/5"
-        },
-        {
-            id: "789",
-            name: "IndentNav",
-            compatibility: "VS code",
-            description: "Enables code navigation between different indentation levels",
-            rating: "3/5"
-        },
-    ]
-}
 
 function App() {
-    const [data, setData] = useState<Payment[]>([])
-
-    useEffect(() => {
-        getData().then((fetchedData) => setData(fetchedData))
-    }, [])
+    const tools: Tool[] = toolsData;
+    
 
     return (
-        <>
-            <h1 className="Title">Tool Index</h1>
-            <div className="container mx-auto py-10">
-                <DataTable columns={columns} data={data} />
-            </div>
-        </>
-    )
+      <Table.Root size='lg' variant='outline' showColumnBorder>
+        <Table.Header>
+          <Table.Row>
+            <Table.ColumnHeader>Name</Table.ColumnHeader>
+            <Table.ColumnHeader>Compatibility</Table.ColumnHeader>
+            <Table.ColumnHeader>Description</Table.ColumnHeader>
+            <Table.ColumnHeader>Overall Ratings</Table.ColumnHeader>
+          </Table.Row>
+        </Table.Header>
+        <Table.Body>
+          {tools.map((tool) => (
+            <Table.Row key={tool.id}>
+              <Table.Cell>{tool.name}</Table.Cell>
+              <Table.Cell>{tool.compatibility}</Table.Cell>
+              <Table.Cell>{tool.description}</Table.Cell>
+              <Table.Cell>
+                <RatingGroup.Root readOnly count={5} value={tool.rating} size="sm">
+                  <RatingGroup.HiddenInput />
+                  <RatingGroup.Control />
+                </RatingGroup.Root>
+
+              </Table.Cell>
+
+            </Table.Row>
+          ))}
+        </Table.Body>
+
+      </Table.Root>
+        
+    );
 }
 
 export default App
