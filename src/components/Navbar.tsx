@@ -28,7 +28,7 @@ function Navbar() {
         </HStack>
       </NavigationMenuItem>
       <NavigationMenuItem>
-        <ColorModeButton color="white"></ColorModeButton>
+        <ColorModeButton color="white" _hover={{ bgColor: "purple.600" }}></ColorModeButton>
       </NavigationMenuItem>
     </NavigationMenu>
 
