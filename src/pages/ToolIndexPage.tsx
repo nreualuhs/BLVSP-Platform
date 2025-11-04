@@ -1,6 +1,8 @@
 import toolsData from '../data/sample_tools.json';
-import { Box, Button, CloseButton, Dialog, Heading, HStack, Portal, RatingGroup, Stack, Table, Text } from "@chakra-ui/react";
+import { Box, Button, CloseButton, Dialog, Heading, HStack, Input, InputGroup, Portal, RatingGroup, Stack, Table, Text, VStack } from "@chakra-ui/react";
 import { InfoTip } from '@/components/ui/toggle-tip';
+import { useState } from 'react';
+import { LuSearch } from 'react-icons/lu';
 
 interface Tool {
   id: string;
@@ -12,7 +14,15 @@ interface Tool {
 
 
 function ToolIndexPage() {
-    const tools: Tool[] = toolsData;
+    const [search, setSearch] = useState('');
+    const [filteredTools, setFilteredTools] = useState<Tool[]>(toolsData);
+
+    const handleFilterSubmit = () => {
+      const results = toolsData.filter((tool) => 
+        tool.name.toLowerCase().includes(search.toLowerCase())
+      );
+      setFilteredTools(results);
+    };
 
     const searchDialog = (
       <Dialog.Root>
@@ -30,11 +40,21 @@ function ToolIndexPage() {
                 <Dialog.Title>Find Tools</Dialog.Title>
               </Dialog.Header>
               <Dialog.Body>
-                
+                <VStack>
+                  <Box width="100%">
+                    <InputGroup startElement={<LuSearch />}>
+                      <Input
+                        placeholder="Search by tool name"
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)}
+                      />
+                    </InputGroup>
+                  </Box>
+                </VStack>
               </Dialog.Body>
               <Dialog.Footer>
                 <Dialog.ActionTrigger asChild>
-                  <Button>Submit</Button> {/* center this */}
+                  <Button onClick={handleFilterSubmit} bg="primary">Submit</Button> {/* center this? */}
                 </Dialog.ActionTrigger>
               </Dialog.Footer>
               <Dialog.CloseTrigger asChild>
@@ -78,7 +98,7 @@ function ToolIndexPage() {
             </Table.Row>
           </Table.Header>
           <Table.Body>
-            {tools.map((tool) => (
+            {filteredTools.map((tool) => (
               <Table.Row key={tool.id} bg="tertiary">
                 <Table.Cell>{tool.name}</Table.Cell>
                 <Table.Cell>{tool.compatibility}</Table.Cell>
