@@ -10,14 +10,14 @@ interface HomePageItemProps {
 const HomePageItem = ({ to, title, description }: HomePageItemProps) => {
   return (
     <Box>
-      <Heading rounded="sm" bg="primary" px={2} py={4} textAlign="center" mb={2}>
+      <Heading rounded="sm" bg="primary" px={2} py={4} textAlign="center" mb={2} color="white">
         <ChakraLink asChild>
           <ReactLink to={to}>
             {title}
           </ReactLink>
         </ChakraLink>
       </Heading>
-      <Text rounded="sm" bg="tertiary" px={2} py={4} textAlign="center" height="full">
+      <Text rounded="sm" bg="tertiary" px={2} py={4} textAlign="center" height="full" color="white">
         {description}
       </Text>
     </Box>
