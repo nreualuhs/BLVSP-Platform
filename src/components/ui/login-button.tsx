@@ -1,13 +1,13 @@
-import { CloseButton, Dialog, Field, IconButton, Input, Portal } from "@chakra-ui/react";
+import { CloseButton, Dialog, IconButton, Portal } from "@chakra-ui/react";
 import { LuCircleUserRound } from "react-icons/lu";
-import { PasswordInput } from "./password-input";
+import { LoginForm } from "./login-form";
 
 export const LoginButton = () => {
 
 	return (
 		<Dialog.Root>
 			<Dialog.Trigger asChild>
-				<IconButton bg="primary" _dark={{bg: "primary", color: "white"}}>
+				<IconButton bg="primary" _dark={{ bg: "primary", color: "white" }}>
 					<LuCircleUserRound></LuCircleUserRound>
 				</IconButton>
 			</Dialog.Trigger>
@@ -19,23 +19,13 @@ export const LoginButton = () => {
 							<Dialog.Title>Login</Dialog.Title>
 						</Dialog.Header>
 						<Dialog.Body>
-							<form className="flex flex-col">
-								<Field.Root>
-									<Field.Label>Email</Field.Label>
-									<Input />
-								</Field.Root>
-								<Field.Root>
-									<Field.Label>Password</Field.Label>
-									<PasswordInput />
-								</Field.Root>
-								<button type="submit">Submit</button>
-							</form>
-							</Dialog.Body>
-							<Dialog.Footer>
-								<Dialog.CloseTrigger asChild>
-									<CloseButton></CloseButton>
-								</Dialog.CloseTrigger>
-							</Dialog.Footer>
+							<LoginForm></LoginForm>
+						</Dialog.Body>
+						<Dialog.Footer>
+							<Dialog.CloseTrigger asChild>
+								<CloseButton></CloseButton>
+							</Dialog.CloseTrigger>
+						</Dialog.Footer>
 					</Dialog.Content>
 				</Dialog.Positioner>
 			</Portal>
