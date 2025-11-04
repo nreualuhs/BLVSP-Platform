@@ -12,7 +12,9 @@ function App() {
 					<Heading rounded="sm" bg="primary" px={2} py={4} textAlign="center" mb={2}>
 						<ChakraLink asChild>
 							<ReactLink to="tools">
-								Tool Index
+								<Text color="white">
+									Tool Index
+								</Text>
 							</ReactLink>
 						</ChakraLink>
 					</Heading>
@@ -22,7 +24,9 @@ function App() {
 					<Heading rounded="sm" bg="primary" px={2} py={4} textAlign="center" mb={2}>
 						<ChakraLink asChild>
 							<ReactLink to="#">
-								Submit A Tool
+								<Text color="white">
+									Submit A Tool
+								</Text>
 							</ReactLink>
 						</ChakraLink>
 					</Heading>
@@ -32,7 +36,9 @@ function App() {
 					<Heading rounded="sm" bg="primary" px={2} py={4} textAlign="center" mb={2}>
 						<ChakraLink asChild>
 							<ReactLink to="#">
-								Connect Now
+								<Text color="white">
+									Connect Now
+								</Text>
 							</ReactLink>
 						</ChakraLink>
 					</Heading>
@@ -42,7 +48,9 @@ function App() {
 					<Heading rounded="sm" bg="primary" px={2} py={4} textAlign="center" mb={2}>
 						<ChakraLink>
 							<ReactLink to="#">
-								Get Involved
+								<Text color="white">
+									Get Involved
+								</Text>
 							</ReactLink>
 						</ChakraLink>
 					</Heading>

@@ -27,7 +27,7 @@ function ToolIndexPage() {
     const searchDialog = (
       <Dialog.Root>
         <Dialog.Trigger asChild>
-          <Button rounded="full" backgroundColor="primary"> 
+          <Button rounded="full" backgroundColor="primary" color="white"> 
             Find a Tool
           </Button>
           
