@@ -9,13 +9,12 @@ import App from './App.tsx';
 import CreatePage from './pages/CreatePage.tsx';
 import HomePage from './pages/HomePage.tsx';
 import ToolDetailPage from './pages/ToolDetailPage.tsx';
-import ToolIndex from './pages/ToolIndex.tsx';
-import { Provider } from './components/ui/provider.tsx';
+import ToolIndexPage from './pages/ToolIndexPage.tsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Provider><App></App></Provider>,
+    element: <App></App>,
     children: [
       {
         index: true,
@@ -27,12 +26,16 @@ const router = createBrowserRouter([
       },
       {
         path: "tools",
-        element: <ToolIndex />
+        element: <ToolIndexPage />
       },
       {
         path: "tool/:id", //ideally, it would work like "tool/{name}", try to implement later
         element: <ToolDetailPage />
       },
+      {
+        path: "index",
+        element: <ToolIndexPage />
+      }
     ],
   },
 ]);

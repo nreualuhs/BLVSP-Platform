@@ -1,11 +1,7 @@
 import {
   NavigationMenu,
-  //NavigationMenuContent,
-  //NavigationMenuIndicator,
   NavigationMenuItem,
   NavigationMenuLink,
-  //NavigationMenuTrigger,
-  //NavigationMenuViewport,
 } from "@/components/ui/navigation-menu"
 
 import { ColorModeButton } from "./ui/color-mode";
@@ -13,7 +9,7 @@ import { HStack, Image } from "@chakra-ui/react";
 
 function Navbar() {
   return (
-    <NavigationMenu bg="purple.500" px={6} py={4} gap={8} align="center" justify="space-between">
+    <NavigationMenu bg="primary" px={6} py={4} gap={8} align="center" justify="space-between">
       <NavigationMenuItem>
         <Image w="60px" h="50px" src="logo.png"></Image>
       </NavigationMenuItem>
@@ -28,7 +24,7 @@ function Navbar() {
         </HStack>
       </NavigationMenuItem>
       <NavigationMenuItem>
-        <ColorModeButton color="white" _hover={{ bgColor: "purple.600" }}></ColorModeButton>
+        <ColorModeButton color="white" _hover={{ bgColor: "purple.600" }}></ColorModeButton> {/** @todo: get rid of this after we have a placeholder profile? */}
       </NavigationMenuItem>
     </NavigationMenu>
 
