@@ -17,7 +17,7 @@ function ToolIndexPage() {
     const searchDialog = (
       <Dialog.Root>
         <Dialog.Trigger asChild>
-          <Button rounded="full"> 
+          <Button rounded="full" backgroundColor="primary"> 
             Find a Tool
           </Button>
           
@@ -70,7 +70,7 @@ function ToolIndexPage() {
         
         <Table.Root size="lg" variant="outline" showColumnBorder>
           <Table.Header>
-            <Table.Row>
+            <Table.Row bg="secondary">
               <Table.ColumnHeader>Name</Table.ColumnHeader>
               <Table.ColumnHeader>Compatibility</Table.ColumnHeader>
               <Table.ColumnHeader>Description</Table.ColumnHeader>
@@ -79,7 +79,7 @@ function ToolIndexPage() {
           </Table.Header>
           <Table.Body>
             {tools.map((tool) => (
-              <Table.Row key={tool.id}>
+              <Table.Row key={tool.id} bg="tertiary">
                 <Table.Cell>{tool.name}</Table.Cell>
                 <Table.Cell>{tool.compatibility}</Table.Cell>
                 <Table.Cell>{tool.description}</Table.Cell>
