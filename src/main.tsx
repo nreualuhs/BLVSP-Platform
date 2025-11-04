@@ -10,12 +10,11 @@ import CreatePage from './pages/CreatePage.tsx';
 import HomePage from './pages/HomePage.tsx';
 import ToolDetailPage from './pages/ToolDetailPage.tsx';
 import ToolIndexPage from './pages/ToolIndexPage.tsx';
-import { Provider } from './components/ui/provider.tsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Provider><App></App></Provider>,
+    element: <App></App>,
     children: [
       {
         index: true,
