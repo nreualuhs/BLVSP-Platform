@@ -1,0 +1,15 @@
+import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react"
+
+const config = defineConfig({
+  theme: {
+    tokens: {
+      colors: { // @todo: revamp when yoonha provides us with a confirmed palette
+        primary: { value: "#6C5DCC" }, 
+        secondary: { value: "rgba(108, 93, 204, 0.50)"},
+        tertiary: { value: "rgba(108, 93, 204, 0.25)"},
+      }
+    },
+  }
+})
+
+export const system = createSystem(defaultConfig, config)

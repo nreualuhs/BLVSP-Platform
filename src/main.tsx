@@ -9,7 +9,7 @@ import App from './App.tsx';
 import CreatePage from './pages/CreatePage.tsx';
 import HomePage from './pages/HomePage.tsx';
 import ToolDetailPage from './pages/ToolDetailPage.tsx';
-import ToolIndex from './pages/ToolIndex.tsx';
+import ToolIndexPage from './pages/ToolIndexPage.tsx';
 import { Provider } from './components/ui/provider.tsx';
 
 const router = createBrowserRouter([
@@ -27,12 +27,16 @@ const router = createBrowserRouter([
       },
       {
         path: "tools",
-        element: <ToolIndex />
+        element: <ToolIndexPage />
       },
       {
         path: "tool/:id", //ideally, it would work like "tool/{name}", try to implement later
         element: <ToolDetailPage />
       },
+      {
+        path: "index",
+        element: <ToolIndexPage />
+      }
     ],
   },
 ]);
