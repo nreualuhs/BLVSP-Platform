@@ -10,14 +10,16 @@ interface HomePageItemProps {
 const HomePageItem = ({ to, title, description }: HomePageItemProps) => {
   return (
     <Box>
-      <Heading rounded="sm" bg="primary" px={2} py={4} textAlign="center" mb={2} color="white">
+      <Heading rounded="sm" bg="primary" px={2} py={4} textAlign="center" mb={2}>
         <ChakraLink asChild>
           <ReactLink to={to}>
-            {title}
+            <Text color="white">
+              {title}
+            </Text>
           </ReactLink>
         </ChakraLink>
       </Heading>
-      <Text rounded="sm" bg="tertiary" px={2} py={4} textAlign="center" height="full" color="white">
+      <Text rounded="sm" bg="tertiary" px={2} py={4} textAlign="center" height="full">
         {description}
       </Text>
     </Box>
@@ -30,19 +32,14 @@ function App() {
 			<Heading size="7xl">Access Code Hub</Heading>
 			<Text textStyle="xl" mt="12">Welcome to the Access Code Hub! We are a screen reader accessible platform where Blind and Low Vision Software Professionals (BLVSPs) can find software tools for accessibility, network with other BLVSPs and get involved in   community outreach through volunteering. To learn more about us  please see the features below.</Text>
 			<Grid templateColumns="repeat(4, minmax(0, 1fr))" mt="12" gap="8" className="directory">
-				<Box>
-					<Heading rounded="sm" bg="primary" px={2} py={4} textAlign="center" mb={2}>
-						<ChakraLink asChild>
-							<ReactLink to="tools">
-								Tool Index
-							</ReactLink>
-						</ChakraLink>
-					</Heading>
-					<Text rounded="sm" bg="tertiary" px={2} py={4} textAlign="center" height="full">Our Tool Index page is a configured list of accessible tools. Please visit here to find the most applicable tools for your use case.</Text>
-				</Box>
+				<HomePageItem
+          to="tools"
+          title="Tool Index"
+          description="Our Tool Index page is a configured list of accessible tools. Please visit here to find the most applicable tools for your use case."
+        />
 
         <HomePageItem 
-          to="tools"
+          to="#"
           title="Submit A Tool"
           description="To submit a tool to the website please use our Tool Submission Form. This will create a new index in the Tool Index page, so that other developers can take advantage of this utility."
         />
