@@ -5,9 +5,21 @@ function App() {
 
 	return (
 		<>
-			<Heading size="7xl">Access Code Hub</Heading>
-			<Text textStyle="xl" mt="12">Welcome to the Access Code Hub! We are a screen reader accessible platform where Blind and Low Vision Software Professionals (BLVSPs) can find software tools for accessibility, network with other BLVSPs and get involved in   community outreach through volunteering. To learn more about us  please see the features below.</Text>
-			<Grid templateColumns="repeat(4, minmax(0, 1fr))" mt="12" gap="8" className="directory">
+			<Heading size={{
+				base: "7xl",
+				sm: "4xl"
+			}}>Access Code Hub</Heading>
+			<Text textStyle={{
+				base: "xl",
+				sm: "md"
+			}} mt="12">Welcome to the Access Code Hub! We are a screen reader accessible platform where Blind and Low Vision Software Professionals (BLVSPs) can find software tools for accessibility, network with other BLVSPs and get involved in   community outreach through volunteering. To learn more about us  please see the features below.</Text>
+			<Grid templateColumns={{
+				base: "repeat(4, minmax(0, 1fr))",
+				sm: "repeat(1, minmax(0, 1fr))"
+			}} mt="12" gap="8" rowGap={{
+				base: 0,
+				sm: "24"
+			}} className="directory">
 				<Box>
 					<Heading rounded="sm" bg="primary" px={2} py={4} textAlign="center" mb={2}>
 						<ChakraLink asChild>
