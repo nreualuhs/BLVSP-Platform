@@ -1,4 +1,4 @@
-import { Field, Input } from "@chakra-ui/react";
+import { Button, Field, Input } from "@chakra-ui/react";
 import { PasswordInput } from "./password-input";
 
 export const LoginForm = () => {
@@ -8,11 +8,11 @@ export const LoginForm = () => {
 				<Field.Label>Email</Field.Label>
 				<Input />
 			</Field.Root>
-			<Field.Root>
+			<Field.Root mt="4">
 				<Field.Label>Password</Field.Label>
 				<PasswordInput />
 			</Field.Root>
-			<button type="submit">Submit</button>
+			<Button type="submit" mt="8" bg="primary">Login</Button>
 		</form>
 	)
 }
