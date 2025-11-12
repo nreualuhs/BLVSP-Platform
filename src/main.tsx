@@ -10,6 +10,7 @@ import CreatePage from './pages/CreatePage.tsx';
 import HomePage from './pages/HomePage.tsx';
 import ToolDetailPage from './pages/ToolDetailPage.tsx';
 import ToolIndexPage from './pages/ToolIndexPage.tsx';
+import ToolSubmissionPage from './pages/ToolSubmissionPage.tsx';
 
 const router = createBrowserRouter([
   {
@@ -35,7 +36,11 @@ const router = createBrowserRouter([
       {
         path: "index",
         element: <ToolIndexPage />
-      }
+      },
+      {
+        path: "submission",
+        element: <ToolSubmissionPage />
+      },
     ],
   },
 ]);
