@@ -10,6 +10,9 @@ import CreatePage from './pages/CreatePage.tsx';
 import HomePage from './pages/HomePage.tsx';
 import ToolDetailPage from './pages/ToolDetailPage.tsx';
 import ToolIndexPage from './pages/ToolIndexPage.tsx';
+import { LoginPage } from './pages/LoginPage.tsx';
+
+const isLoggedIn = false;
 
 const router = createBrowserRouter([
   {
@@ -41,7 +44,24 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>,
+  isLoggedIn ? (
+    <StrictMode>
+      <RouterProvider router={router} />
+    </StrictMode>
+  ) : (
+    <StrictMode>
+      <RouterProvider router={createBrowserRouter([
+        {
+          path: "/",
+          element: <App></App>,
+          children: [
+            {
+              index: true,
+              element: <LoginPage></LoginPage>
+            }
+          ]
+        }
+      ])} />
+    </StrictMode>
+  )
 )
