@@ -3,17 +3,21 @@
   "version": "1.0.0",
   "private": true,
   "devDependencies": {
-    "typescript": "^5.2.2",
+    "concurrently": "^9.2.1",
     "eslint": "^9.39.1",
     "prettier": "^3.6.2",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
   },
   "scripts": {
     "dev:frontend": "pnpm --filter ach-frontend dev",
     "build:frontend": "pnpm --filter ach-frontend build",
     "lint:frontend": "pnpm --filter ach-frontend lint",
-    "dev": "pnpm dev:frontend",
-    "build": "pnpm build:frontend",
-    "lint": "pnpm lint:frontend"
+    "dev:backend": "pnpm --filter ach-server dev",
+    "build:backend": "pnpm --filter ach-server build",
+    "lint:backend": "pnpm --filter ach-server lint",
+    "dev": "concurrently \"pnpm dev:frontend\" \"pnpm dev:backend\"",
+    "build": "pnpm build:frontend && pnpm build:backend",
+    "lint": "pnpm lint:frontend && pnpm lint:backend"
   }
 }
