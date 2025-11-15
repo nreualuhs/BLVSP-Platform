@@ -16,7 +16,7 @@
     "dev:backend": "pnpm --filter ach-server dev",
     "build:backend": "pnpm --filter ach-server build",
     "lint:backend": "pnpm --filter ach-server lint",
-    "dev": "concurrently \"pnpm dev:frontend\" \"pnpm dev:backend\"",
+    "dev": "concurrently --names frontend,backend --prefix-colors green,blue \"pnpm dev:frontend\" \"pnpm dev:backend\"",
     "build": "pnpm build:frontend && pnpm build:backend",
     "lint": "pnpm lint:frontend && pnpm lint:backend"
   }
