@@ -13,6 +13,8 @@ import ToolDetailPage from './pages/ToolDetailPage.tsx';
 import ToolIndexPage from './pages/ToolIndexPage.tsx';
 import { LoginPage } from './pages/LoginPage.tsx';
 import { RequireAuth } from './components/AuthProvider.tsx';
+import ToolSubmissionPage from './pages/ToolSubmissionPage.tsx';
+import CustomToolSubmissionPage from './pages/CustomToolSubmissionPage.tsx';
 
 const router = createBrowserRouter([
 	{
@@ -49,6 +51,14 @@ const router = createBrowserRouter([
 					{
 						path: "index",
 						element: <ToolIndexPage />,
+					},
+					{
+						path: "submission",
+						element: <ToolSubmissionPage />
+					},
+					{
+						path: "submission2", // @todo: this should replace submission when backend is completed
+						element: <CustomToolSubmissionPage />
 					},
 				],
 			},

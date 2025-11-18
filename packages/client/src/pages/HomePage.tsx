@@ -1,8 +1,32 @@
 import { Box, Grid, Heading, Link as ChakraLink, Text } from "@chakra-ui/react";
 import { Link as ReactLink } from "react-router-dom";
 
-function App() {
+interface HomePageItemProps {
+  to: string;
+  title: string;
+  description: string;
+};
 
+const HomePageItem = ({ to, title, description }: HomePageItemProps) => {
+  return (
+    <Box>
+      <Heading rounded="sm" bg="primary" px={2} py={4} textAlign="center" mb={2}>
+        <ChakraLink asChild>
+          <ReactLink to={to}>
+            <Text color="white">
+              {title}
+            </Text>
+          </ReactLink>
+        </ChakraLink>
+      </Heading>
+      <Text rounded="sm" bg="tertiary" px={2} py={4} textAlign="center" height="full">
+        {description}
+      </Text>
+    </Box>
+  );
+};
+
+function App() {
 	return (
 		<>
 			<Heading size={{
@@ -20,54 +44,29 @@ function App() {
 				lg: 0,
 				sm: "24"
 			}} className="directory">
-				<Box>
-					<Heading rounded="sm" bg="primary" px={2} py={4} textAlign="center" mb={2}>
-						<ChakraLink asChild>
-							<ReactLink to="tools">
-								<Text color="white">
-									Tool Index
-								</Text>
-							</ReactLink>
-						</ChakraLink>
-					</Heading>
-					<Text rounded="sm" bg="tertiary" px={2} py={4} textAlign="center" height="full">Our Tool Index page is a configured list of accessible tools. Please visit here to find the most applicable tools for your use case.</Text>
-				</Box>
-				<Box>
-					<Heading rounded="sm" bg="primary" px={2} py={4} textAlign="center" mb={2}>
-						<ChakraLink asChild>
-							<ReactLink to="#">
-								<Text color="white">
-									Submit A Tool
-								</Text>
-							</ReactLink>
-						</ChakraLink>
-					</Heading>
-					<Text rounded="sm" bg="tertiary" px={2} py={4} textAlign="center" height="full">To submit a tool to the website please use our Tool Submission Form. This will create a new index in the Tool Index page, so that other developers can take advantage of this utility.</Text>
-				</Box>
-				<Box>
-					<Heading rounded="sm" bg="primary" px={2} py={4} textAlign="center" mb={2}>
-						<ChakraLink asChild>
-							<ReactLink to="#">
-								<Text color="white">
-									Connect Now
-								</Text>
-							</ReactLink>
-						</ChakraLink>
-					</Heading>
-					<Text rounded="sm" bg="tertiary" px={2} py={4} textAlign="center" height="full">To learn more about the BLVSP community please visit our Community section. Here you can find other software professionals to discuss useful tools.</Text>
-				</Box>
-				<Box>
-					<Heading rounded="sm" bg="primary" px={2} py={4} textAlign="center" mb={2}>
-						<ChakraLink>
-							<ReactLink to="#">
-								<Text color="white">
-									Get Involved
-								</Text>
-							</ReactLink>
-						</ChakraLink>
-					</Heading>
-					<Text rounded="sm" bg="tertiary" px={2} py={4} textAlign="center" height="full">To get more engaged in the community please consider volunteering. Here you can help improve our Tool Index website through content moderation or community outreach.</Text>
-				</Box>
+				<HomePageItem
+          to="tools"
+          title="Tool Index"
+          description="Our Tool Index page is a configured list of accessible tools. Please visit here to find the most applicable tools for your use case."
+        />
+
+        <HomePageItem 
+          to="#"
+          title="Submit A Tool"
+          description="To submit a tool to the website please use our Tool Submission Form. This will create a new index in the Tool Index page, so that other developers can take advantage of this utility."
+        />
+
+				<HomePageItem
+          to="#"
+          title="Connect Now"
+          description="To learn more about the BLVSP community please visit our Community section. Here you can find other software professionals to discuss useful tools."
+        />
+
+        <HomePageItem
+          to="#"
+          title="Get Involved"
+          description="To get more engaged in the community please consider volunteering. Here you can help improve our Tool Index website through content moderation or community outreach."
+        />
 			</Grid>
 		</>
 	)

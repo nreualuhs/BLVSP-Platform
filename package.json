@@ -1,5 +1,5 @@
 {
-  "name": "blsvp-platform",
+  "name": "access-code-hub",
   "private": true,
   "workspaces": ["packages/*"],
   "scripts": {

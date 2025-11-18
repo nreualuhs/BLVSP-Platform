@@ -12,6 +12,7 @@ interface Tool {
   rating: number;
 };
 
+// @todo: NEEDS ACCESSIBILITY 
 
 function ToolIndexPage() {
     const [search, setSearch] = useState('');

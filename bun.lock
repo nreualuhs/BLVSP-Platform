@@ -18,6 +18,7 @@
         "@chakra-ui/react": "^3.28.0",
         "@emotion/react": "^11.14.0",
         "@emotion/styled": "^11.14.0",
+        "@fontsource-variable/lexend-deca": "^5.2.10",
         "@fontsource/roboto": "^5.1.1",
         "@mui/icons-material": "^6.4.6",
         "@mui/material": "^6.4.6",
@@ -223,6 +224,8 @@
     "@floating-ui/dom": ["@floating-ui/dom@1.7.4", "", { "dependencies": { "@floating-ui/core": "^1.7.3", "@floating-ui/utils": "^0.2.10" } }, "sha512-OOchDgh4F2CchOX94cRVqhvy7b3AFb+/rQXyswmzmGakRfkMgoWVjfnLWkRirfLEfuD4ysVW16eXzwt3jHIzKA=="],
 
     "@floating-ui/utils": ["@floating-ui/utils@0.2.10", "", {}, "sha512-aGTxbpbg8/b5JfU1HXSrbH3wXZuLPJcNEcZQFMxLs3oSzgtVu6nFPkbbGGUvBcUjKV2YyB9Wxxabo+HEH9tcRQ=="],
+
+    "@fontsource-variable/lexend-deca": ["@fontsource-variable/lexend-deca@5.2.10", "", {}, "sha512-RjHa3ud47MdyRWyOiXRNyExlui6DJWpZCqMVyCFQw8gXxQAWw2G2ujxcwyvLAW14GCBTrRRNQCAptfAdX4QOGQ=="],
 
     "@fontsource/roboto": ["@fontsource/roboto@5.1.1", "", {}, "sha512-XwVVXtERDQIM7HPUIbyDe0FP4SRovpjF7zMI8M7pbqFp3ahLJsJTd18h+E6pkar6UbV3btbwkKjYARr5M+SQow=="],
 
