@@ -1,5 +1,5 @@
 {
-  "name": "blvsp-platform-server",
+  "name": "ach-backend",
   "module": "index.ts",
   "type": "module",
   "private": true,
@@ -16,5 +16,8 @@
     "cors": "^2.8.5",
     "express": "^5.1.0",
     "mongoose": "^8.19.3"
+  },
+  "scripts": {
+    "dev": "npx tsx index.ts"
   }
 }
