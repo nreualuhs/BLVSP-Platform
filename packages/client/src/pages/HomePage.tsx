@@ -1,5 +1,5 @@
 import { Box, Grid, Heading, Link as ChakraLink, Text } from "@chakra-ui/react";
-import { Link as ReactLink } from "react-router";
+import { Link as ReactLink } from "react-router-dom";
 
 function App() {
 
