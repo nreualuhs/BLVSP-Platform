@@ -3,12 +3,15 @@
   "private": true,
   "workspaces": ["packages/*"],
   "scripts": {
-	"dev:client": "cd packages/client && vite",
-	"dev:server": "cd packages/server && npx tsx index.ts",
+    "dev:client": "cd packages/client && vite",
+    "dev:server": "cd packages/server && npx tsx index.ts",
     "dev": "concurrently -n client,server -c green,blue \"npm run dev:client\" \"npm run dev:server\"",
-	"dev:bun": "bunx --bun concurrently -n client,server -c green,blue \"bun run dev:client\" \"bun run packages/server/index.ts\""
+    "dev:bun": "bunx --bun concurrently -n client,server -c green,blue \"bun run dev:client\" \"bun run packages/server/index.ts\""
   },
   "devDependencies": {
     "concurrently": "^9.2.1"
+  },
+  "dependencies": {
+    "tsx": "^4.20.6"
   }
 }
